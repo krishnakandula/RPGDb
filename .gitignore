@@ -3,3 +3,4 @@ config.js
 
 #Node
 node_modules
+*.log
