@@ -5,7 +5,7 @@ let insertStatement = `INSERT INTO ${character.TABLE_NAME}
                         VALUES ($1, $2, $3, $4, $5)`;
 
 //Prepared statement
-const sample = {
+let sample = {
   name: "sample",
   text: insertStatement,
   values: []
