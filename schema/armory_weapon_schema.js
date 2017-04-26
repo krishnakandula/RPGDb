@@ -4,7 +4,7 @@ const TOOLS = require("./weapons_schema");
 
 const TABLENAME = "armory_weapon";
 
-const COL = {
+const COLS = {
     WEAPONS_ID : WEAPONS.COLS.TOOLS_ID,
     ARMORY_ID : ARMORY.COLS.ARMORY_ID,
     MARKET_ID: ARMORY.COLS.MARKET_ID
@@ -12,5 +12,5 @@ const COL = {
 
 module.exports = {
     TABLENAME,
-    COL
+    COLS
 };
