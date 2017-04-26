@@ -8,8 +8,8 @@ client.connect(err => {
   //Execute queries
   console.log("Connection successful");
 
-  let id = 32534;
-  let name = "squanto";
+  let id = 57483;
+  let name = "";
   let sex = true;
   let hp = 100;
   let exp = 150;
@@ -24,7 +24,8 @@ client.connect(err => {
     })
     .catch(err => {
       console.error(err);
+    }).then(() => {
+      //Exit cleanly
+      process.exit(0);
     });
-
-  process.exit(0);
 });

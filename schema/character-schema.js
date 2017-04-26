@@ -3,7 +3,7 @@ const TABLE_NAME = "character";
 
 const COLS = {
   ID: "character_id",
-  NAME: "charcter_name",
+  NAME: "character_name",
   SEX: "sex",
   EXP: "experience_points",
   HP: "hit_points"
