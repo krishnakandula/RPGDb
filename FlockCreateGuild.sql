@@ -78,8 +78,12 @@ CREATE TABLE INVENTORY (
 );
 CREATE TABLE MAGICIAN (
 	Character_id VARCHAR(64) NOT NULL
+	,Magician_id VARCHAR(64) NOT NULL
 	,FOREIGN KEY (Character_id) REFERENCES CHARACTER(Character_id)
-	,PRIMARY KEY (Character_id)
+	,PRIMARY KEY (
+		Character_id
+		,Magician_id
+		)
 	,Magic_Points INT DEFAULT 100
 	,Type_flag_1 BOOLEAN DEFAULT FALSE
 );
