@@ -2,7 +2,7 @@
 const TABLE_NAME = "potion";
 
 const COLS = {
-	POTION_ID: "potion_id";
+	POTION_ID: "potion_id",
 }
 
 module.exports = {

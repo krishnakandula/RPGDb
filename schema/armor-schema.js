@@ -1,12 +1,11 @@
 // Contains the armor schema 
+const TABLE_NAME = "armor";
 
-const TABLENAME = "armor";
-
-const COL = {
+const COLS = {
     ARMOR_ID: "armor_id",
 }
 
 module.exports = {
-    TABLENAME,
-    COL
+    TABLE_NAME,
+    COLS
 };

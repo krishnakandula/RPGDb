@@ -1,7 +1,7 @@
 // Contains character skill chema
 const CHARACTER = require("./character_schema");
 
-const TABLENAME = "character_skill";
+const TABLE_NAME = "character_skill";
 
 const COLS = {
     SKILL_ID: "skill_id",
@@ -9,6 +9,6 @@ const COLS = {
 };
 
 module.exports = {
-    TABLENAME,
+    TABLE_NAME,
     COLS
 };

@@ -3,7 +3,7 @@ const CHARACTER = require("./character_schema");
 
 const TABLENAME = "market";
 
-const COL = {
+const COLS = {
     MARKET_ID: "market_id",
     MARKET_NAME: "market_name",
     CHARACTER_ID: CHARACTER.COL.CHARACTER_ID
@@ -11,5 +11,5 @@ const COL = {
 
 module.exports = {
     TABLENAME,
-    COL
+    COLS
 };

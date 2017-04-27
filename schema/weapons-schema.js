@@ -1,12 +1,11 @@
 // Contains weapons schema
+const TABLE_NAME = "weapons";
 
-const TABLENAME = "weapons";
-
-const COL = {
+const COLS = {
     WEAPONS_ID : "weapons_id",
 };
 
 module.exports = {
-    TABLENAME,
-    COL
+    TABLE_NAME,
+    COLS
 };

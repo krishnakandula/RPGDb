@@ -1,12 +1,11 @@
 // Contains tools schema
-
 const TABLENAME = "tools";
 
-const COL = {
+const COLS = {
     TOOLS_ID: "tools_id",
 };
 
 module.exports = {
     TABLENAME,
-    COL,
+    COLS,
 };

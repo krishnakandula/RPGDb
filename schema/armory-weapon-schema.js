@@ -1,16 +1,16 @@
-// Contains armory tool schema
+// Contains armory weapon schema
 const ARMORY = require("./armory_schema");
-const TOOL = require("./tools_schema");
+const TOOLS = require("./weapons_schema");
 
-const TABLENAME = "armory_tool";
+const TABLE_NAME = "armory_weapon";
 
 const COLS = {
-    TOOLS_ID : TOOLS.COLS.TOOLS_ID,
+    WEAPONS_ID : WEAPONS.COLS.TOOLS_ID,
     ARMORY_ID : ARMORY.COLS.ARMORY_ID,
     MARKET_ID: ARMORY.COLS.MARKET_ID
 };
 
 module.exports = {
-    TABLENAME,
+    TABLE_NAME,
     COLS
 };
