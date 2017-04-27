@@ -1,5 +1,5 @@
 // Contains market schema
-const CHARACTER = require("./character_schema");
+const CHARACTER = require("./character-schema");
 
 const TABLENAME = "market";
 

@@ -1,5 +1,5 @@
 // Contains character skill chema
-const CHARACTER = require("./character_schema");
+const CHARACTER = require("./character-schema");
 
 const TABLE_NAME = "character_skill";
 

@@ -1,5 +1,5 @@
 // Schema table for armory relation
-const MARKET = require("./market_schema");
+const MARKET = require("./market-schema");
 
 const TABLE_NAME = "characters";
 

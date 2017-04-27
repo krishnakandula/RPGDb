@@ -1,6 +1,6 @@
 // Contains armory weapon schema
-const ARMORY = require("./armory_schema");
-const TOOLS = require("./weapons_schema");
+const ARMORY = require("./armory-schema");
+const TOOLS = require("./weapons-schema");
 
 const TABLE_NAME = "armory_weapon";
 

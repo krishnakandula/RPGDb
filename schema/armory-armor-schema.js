@@ -1,6 +1,6 @@
 // Contains armory_armor relation 
-const ARMORY = require("./armory_schema");
-const ARMOR = require("./armor_schema");
+const ARMORY = require("./armory-schema");
+const ARMOR = require("./armor-schema");
 
 const TABLE_NAME = "armory_armor";
 
