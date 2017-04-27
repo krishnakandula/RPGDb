@@ -2,7 +2,7 @@
 const TABLE_NAME = "food";
 
 const COLS = {
-	FOOD_ID: "food_id";
+	FOOD_ID: "food_id",
 }
 
 module.exports = {
