@@ -149,8 +149,13 @@ CREATE TABLE POTION (
 	,PRIMARY KEY (Potion_id)
 );
 CREATE TABLE WARRIOR (
-	Warrior_id VARCHAR(64) NOT NULL
-	,PRIMARY KEY (Warrior_id)
+	Character_id VARCHAR(64) NOT NULL
+	,FOREIGN KEY (Character_id) REFERENCES CHARACTER(Character_id)
+	,Warrior_id VARCHAR(64) NOT NULL
+	,PRIMARY KEY (
+		Character_id
+		,Warrior_id
+		)
 	,Stamina_points INT DEFAULT 100
 	,Type_flag_1 BOOLEAN DEFAULT FALSE
 	,Type_flag_2 BOOLEAN DEFAULT FALSE
