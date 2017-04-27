@@ -1,9 +1,0 @@
-#Config files
-config.js
-
-#Node
-node_modules
-*.log
-
-#Idea
-.idea/
