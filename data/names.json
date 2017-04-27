@@ -1,9 +1,15 @@
-[
-  "Krishna",
-  "Mandy",
-  "Tracey",
-  "Shane",
-  "Jocelyn",
-  "Winston",
-  "Devin"
-]
+{
+  "people": [
+    "Krishna",
+    "Mandy",
+    "Tracey",
+    "Shane",
+    "Jocelyn",
+    "Winston",
+    "Devin"
+  ],
+  "party": [
+    "party1",
+    "party2"
+  ]
+}

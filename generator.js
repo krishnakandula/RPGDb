@@ -1,4 +1,5 @@
 const names = require('./data/names');
+const character = require('./schema/character-schema');
 const uuid = require('uuid');
 
 const MAX_EXP = 100;
@@ -8,32 +9,15 @@ const MAX_HP = 1000;
 const MIN_HP = 0;
 
 /**
- * Generates insert statements for the character relation
- */
-let generateCharacterInsertStatement = () => {
-    //Generate random id
-    //Generate random name
-    let name = generateRandomName();
-    //Generate random sex
-    let sex = generateRandomSex();
-    //Generate random exp
-    let exp = getRandomNumber(MIN_EXP, MAX_EXP);
-    //Generate random hp
-    let hp = getRandomNumber(MIN_HP, MAX_HP);
-
-    return []
-};
-
-/**
  *
  * @returns {*}
  */
 let generateRandomSex = () => {
-    min = 0;
-    max = 100;
-    range = max - min;
+    let min = 0;
+    let max = 100;
+    let range = max - min;
 
-    rand = parseInt((Math.random() * range) + min, 10);
+    let rand = parseInt((Math.random() * range) + min, 10);
 
     //TRUE = Male
     //FALSE = Female
@@ -47,9 +31,9 @@ let generateRandomSex = () => {
  * @return the selected name
  */
 let generateRandomName = () => {
-    index = getRandomNumber(0, names.length);
+    let index = generateRandomNumber(0, names.people.length);
 
-    return names[index];
+    return names.people[index];
 };
 
 /**
@@ -57,14 +41,26 @@ let generateRandomName = () => {
  * @param {*} min
  * @param {*} max
  */
-let getRandomNumber = (min, max) => {
-    range = max - min;
-    rand = (Math.random() * range) + min;
+let generateRandomNumber = (min, max) => {
+    let range = max - min;
+    let rand = (Math.random() * range) + min;
 
     //Cast to integer
     return parseInt(rand, 10);
 }
 
+/**
+ *
+ */
+let generateRandomPartyName = () => {
+    let index = generateRandomNumber(0, names.party.length);
+
+    return names.party[index];
+}
+
 module.exports = {
-    generateCharacterInsertStatements
+    generateRandomName,
+    generateRandomNumber,
+    generateRandomSex,
+    generateRandomPartyName
 };
