@@ -1,12 +1,6 @@
 const names = require('./data/names');
 const character = require('./schema/character-schema');
-const uuid = require('uuid');
-
-const MAX_EXP = 100;
-const MIN_EXP = 0;
-
-const MAX_HP = 1000;
-const MIN_HP = 0;
+const uuid = require('uuid/v1');
 
 /**
  *
@@ -58,9 +52,15 @@ let generateRandomPartyName = () => {
     return names.party[index];
 }
 
+let generateId = () => {
+    return uuid();
+}
+
+
 module.exports = {
     generateRandomName,
     generateRandomNumber,
     generateRandomSex,
-    generateRandomPartyName
+    generateRandomPartyName,
+    generateId
 };
