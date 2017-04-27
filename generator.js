@@ -24,6 +24,10 @@ let generateCharacterInsertStatement = () => {
     return []
 };
 
+/**
+ *
+ * @returns {*}
+ */
 let generateRandomSex = () => {
     min = 0;
     max = 100;
@@ -33,7 +37,7 @@ let generateRandomSex = () => {
 
     //TRUE = Male
     //FALSE = Female
-    if(rand > 50)
+    if (rand > 50)
         return "TRUE";
     return "FALSE";
 };
@@ -43,22 +47,22 @@ let generateRandomSex = () => {
  * @return the selected name
  */
 let generateRandomName = () => {
-  index = getRandomNumber(0, names.length);
+    index = getRandomNumber(0, names.length);
 
-  return names[index];
+    return names[index];
 };
 
 /**
  * Generates a random number in a given range
- * @param {*} min 
- * @param {*} max 
+ * @param {*} min
+ * @param {*} max
  */
 let getRandomNumber = (min, max) => {
-  range = max - min;
-  rand = (Math.random() * range) + min;
+    range = max - min;
+    rand = (Math.random() * range) + min;
 
-  //Cast to integer
-  return parseInt(rand, 10);
+    //Cast to integer
+    return parseInt(rand, 10);
 }
 
 module.exports = {

@@ -7,11 +7,11 @@ let insertCharacterStatement = `INSERT INTO ${character.TABLE_NAME}
 
 //Prepared statement
 let sample = {
-  name: "sample",
-  text: insertCharacterStatement,
-  values: []
+    name: "sample",
+    text: insertCharacterStatement,
+    values: []
 };
 
 module.exports = {
-  sample
+    sample
 };
