@@ -7,6 +7,8 @@ const COLS = {
     TOOLS_ID: "tools_id",
 };
 
+let tuples = [];
+
 let insertToolsStatement = `INSERT INTO ${TABLE_NAME} (${COLS.TOOLS_ID}) VALUES ($1)`;
 
 let preparedStatement = {
@@ -16,11 +18,13 @@ let preparedStatement = {
 };
 
 let generate = () => {
-    preparedStatement.values = generator.generateId();
+    preparedStatement.values = [generator.generateId()];
+    tuples.push(preparedStatement);
     return preparedStatement;
 }
 
 module.exports = {
     TABLE_NAME,
+    tuples,
     generate
 };

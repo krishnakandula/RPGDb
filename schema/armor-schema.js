@@ -7,6 +7,8 @@ const COLS = {
     ARMOR_ID: "armor_id",
 }
 
+let tuples = [];
+
 let insertArmorStatement = `INSERT INTO ${TABLE_NAME} (${COLS.ARMOR_ID}) VALUES ($1)`;
 
 let preparedStatement = {
@@ -16,12 +18,13 @@ let preparedStatement = {
 };
 
 let generate = () => {
-   preparedStatement.values = generator.generateId();
+   preparedStatement.values = [generator.generateId()];
+   tuples.push(preparedStatement);
    return preparedStatement;
 }
 
-
 module.exports = {
     TABLE_NAME,
+    tuples,
     generate
 };
