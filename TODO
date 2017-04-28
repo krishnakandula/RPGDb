@@ -1,2 +1,7 @@
-Fix cafeteria, barracks, etc sql
-add tables back
+- add a market id to character +
+- remove character id from market + 
+- edit keys for barrack specializations +
+- remove general store and armory keys and cascade to all +
+
+
+- how to denote characters in barracks ?
