@@ -1,5 +1,4 @@
 // Contains market schema
-const CHARACTER = require("./character-schema");
 const generator = require('./../generator');
 const names = require('./../data/names.json');
 
@@ -10,22 +9,19 @@ let tuples = [];
 const COLS = {
     MARKET_ID: "market_id",
     MARKET_NAME: "market_name",
-    CHARACTER_ID: CHARACTER.COL.CHARACTER_ID
 };
 
-let insertStatement = `INSERT INTO ${TABLENAME} (${COLS.MARKET_ID} ${COLS.MARKET_NAME} ${COLS.CHARACTER_ID}) VALUES ($1, $2, $3)`;
+let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MARKET_ID} ${COLS.MARKET_NAME}) VALUES ($1, $2)`;
 
 let generateStatement = () => {
     let id = generator.generateId();
     let name = generator.pickRandomEntryFromArray(names.market);
-    let index = generator.generateRandomNumber(0, CHARACTER.tuples.length);
-    let characterId = CHARACTER.tuples[index].CHARACTER_ID;
 
-    return [id, name, characterId];
+    return [id, name];
 }
 
 let preparedStatement = {
-    name: `${TABLENAME} insert`,
+    name: `${TABLE_NAME} insert`,
     text: insertStatement,
     values: []
 };
