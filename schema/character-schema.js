@@ -28,15 +28,15 @@ let generateStatement = () => {
 
     let inStoreRand = generator.generateRandomNumber(0, 3);
     let marketId;
-    if(inStoreRand > 2){
+    if(inStoreRand >= 2){
         //Character not in any store
         marketId = null;
-    } else if (inStoreRand > 1){
+    } else if (inStoreRand >= 1){
         //Character inside general store
-        marketId = market.tuples[0].values.ID;
+        marketId = market.tuples[0].values[0];
     } else{
         //Character inside armory
-        marketId = market.tuples[1].values.ID;
+        marketId = market.tuples[1].values[0];
     }
 
     return [id, name, sex, exp, hp, marketId];

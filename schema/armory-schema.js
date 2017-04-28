@@ -13,7 +13,7 @@ const COLS = {
 let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MARKET_ID}, ${COLS.BLACKSMITH}) VALUES ($1, $2)`
 
 let generateValues = () => {
-    let marketId = MARKET.tuples[1]; //Get armory id from market
+    let marketId = MARKET.tuples[1].values[0]; //Get armory id from market
     let blacksmith = generator.generateRandomName();
 
     return [marketId, blacksmith];
