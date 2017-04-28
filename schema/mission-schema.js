@@ -4,11 +4,12 @@ const TABLE_NAME = "mission";
 
 const COLS = {
     MISSION_ID: "mission_id",
+    PARTY_ID: "party_id"
 };
 
 let tuples = [];
 
-let insertMissionStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MISSION_ID}) VALUES ($1)`;
+let insertMissionStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MISSION_ID}, ${COLS.PARTY_ID}) VALUES ($1,$2)`;
 
 let generateValues = () => {
 	let mission_id = generator.generateId();
