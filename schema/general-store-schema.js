@@ -1,11 +1,11 @@
 const generator = require('./../generator');
 
 //Contains the schema for the general store relation
-const TABLE_NAME = "general-store";
+const TABLE_NAME = 'general-store';
 
 const COLS = {
-    MARKET_ID: "market_id",
-    STORE_KEEPER: "store_keeper"
+    MARKET_ID: 'market_id',
+    STORE_KEEPER: 'store_keeper'
 };
 
 let insertGeneralStoreStatement =
