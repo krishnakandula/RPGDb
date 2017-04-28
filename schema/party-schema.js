@@ -1,7 +1,11 @@
-const generator = require('./../generator');
-
 // Contains schema for party
+
+const generator = require('./../generator');
+const partyNames = require('./../data/names').party;
+
 const TABLE_NAME = "party";
+
+let tuples = [];
 
 const COLS = {
     PARTY_NAME: "party_name",
@@ -29,9 +33,25 @@ let generateStatement = () => {
 let preparedStatement = {
     name: `${TABLE_NAME} insert statement`,
     text: insertPartyStatement,
-    values: generateStatement()
+    values: []
 };
 
+let generateValues = () => {
+    let name = generator.pickRandomEntryFromArray(partyNames);
+    let id = generator.generateId();
+
+    return [name, id];
+}
+
+let generate = () => {
+    preparedStatement.value = generateValues();
+    tuples.push(preparedStatement);
+    return preparedStatement;
+}
+
 module.exports = {
-    preparedStatement
+   TABLE_NAME,
+   COLS,
+   tuples,
+   generate
 };
