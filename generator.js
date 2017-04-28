@@ -72,5 +72,6 @@ module.exports = {
     generateRandomNumber,
     generateRandomSex,
     generateRandomPartyName,
-    generateId
+    generateId,
+    pickRandomEntryFromArray
 };
