@@ -6,18 +6,16 @@ const TABLE_NAME = "cafeteria";
 
 const COLS = {
     BARRACKS_ID: BARRACKS.COLS.BARRACKS_ID,
-    CAFETERIA_ID: "cafeteria_id",
     HEAD_CHEF: "head_chef"
 };
 
-let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.BARRACKS_ID} ${COLS.CAFETERIA_ID} ${COLS.HEAD_CHEF}) VALUES ($1, $2, $3)`;
+let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.BARRACKS_ID} ${COLS.HEAD_CHEF}) VALUES ($1, $2)`;
 
 let generateValues = () => {
     let barracksID;
-    let cafeteriaID = generator.generateId();
     let headChef = generator.generateRandomName();
 
-    return [barracksID, cafeteriaID, headChef];
+    return [barracksID, headChef];
 }
 
 let preparedStatement = {
