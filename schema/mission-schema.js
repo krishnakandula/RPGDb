@@ -1,5 +1,5 @@
 // Contains schema for mission
-const generator = require("./../generator")
+const generator = require("./../generator");
 const TABLE_NAME = "mission";
 
 const COLS = {
