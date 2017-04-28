@@ -36,5 +36,10 @@
     "party2",
     "party3",
     "party4"
+  ],
+  "barracks": [
+    "Warwick",
+    "Gibraltar",
+    "Nightingale"
   ]
 }

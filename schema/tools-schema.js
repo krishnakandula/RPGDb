@@ -7,9 +7,7 @@ const COLS = {
     TOOLS_ID: "tools_id",
 };
 
-let insertToolsStatement = `INSERT INTO ${TABLE_NAME} 
-                            (${COLS.TOOLS_ID})
-                            VALUES ($1)`;
+let insertToolsStatement = `INSERT INTO ${TABLE_NAME} (${COLS.TOOLS_ID}) VALUES ($1)`;
 
 let tools = {
     name: `${TABLE_NAME} insert`,
