@@ -26,7 +26,7 @@ let generateStatement = () => {
     let exp = generator.generateRandomNumber(character.MIN_EXP, character.MAX_EXP);
     let hp = generator.generateRandomNumber(character.MIN_HP, character.MAX_HP);
     let marketIndex = generator.generateRandomNumber(0, market.tuples.length);
-    let market_id = market.tuples[marketIndex];
+    let market_id = market.tuples[marketIndex].values[0];
 
     return [id, name, sex, exp, hp, market_id];
 }
@@ -45,6 +45,7 @@ let generate = () => {
 }
 
 module.exports = {
+    COLS,
     TABLE_NAME,
     tuples,
     generate

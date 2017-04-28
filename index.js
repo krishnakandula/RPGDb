@@ -3,6 +3,10 @@ const fs = require('fs');
 const characterSchema = require('./schema/character-schema');
 const partySchema = require('./schema/party-schema');
 
+let getFileName = (tableName) => {
+    return `${tableName}Out.txt`;
+}
+
 //Connect to database
 client.connect(err => {
     if (err) throw err;
@@ -14,7 +18,8 @@ client.connect(err => {
     let numberOfCharacters = 10;
     while(numberOfCharacters >= 0){
         let queryStatement = characterSchema.generate();
-        fs.appendFileSync('out.txt', JSON.stringify(queryStatement) + '\n');
+        let fileName = getFileName(characterSchema.TABLE_NAME);
+        fs.appendFileSync(fileName, JSON.stringify(queryStatement) + '\n');
         client
             .query(queryStatement)
             .then(result => {
