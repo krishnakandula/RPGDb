@@ -4,7 +4,6 @@ const {client} = require('./db');
 
 const characterSchema = require('./schema/character-schema');
 const marketSchema = require('./schema/market-schema');
-const partySchema = require('./schema/party-schema');
 const generalStoreSchema = require('./schema/general-store-schema');
 const armorySchema = require('./schema/armory-schema');
 
@@ -38,7 +37,7 @@ client.connect(err => {
         numberOfArmories)
 
     //Populate Characters
-    let numberOfCharacters = 10;
+    let numberOfCharacters = 140;
     writeToDb(characterSchema.TABLE_NAME,
         characterSchema,
         numberOfCharacters);
