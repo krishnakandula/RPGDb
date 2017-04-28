@@ -10,7 +10,14 @@ const COLS = {
     HEALTH_POINTS: "health_points"
 };
 
+let insertPetStatement = `INSERT INTO ${TABLE_NAME} (${COLS.PET_ID} ${COLS.CHARACTER_ID} ${COLS.PET_NAME} ${COLS.HEALTH_POINTS}) VALUES ($1,$2,$3,$4)`;
+
+let pet = {
+	name: `${TABLE_NAME} insert`,
+	text: insertPetStatement,
+	values: [generator.generatorId()]
+};
+
 module.exports = {
-    TABLE_NAME,
-    COLS
+    pet
 };
