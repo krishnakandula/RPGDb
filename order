@@ -1,0 +1,27 @@
+character
+market
+mission
+barracks
+magician
+warrior
+general store
+armory
+inventory
+armor
+weapons
+tools
+food
+potion
+armory_{armor, tools, weapons}
+store_{food, potion}
+cafeteria
+quarters
+infirmary
+character_{armor, tools, weapons, food, potion, skill}
+colosseum
+quest
+rewards
+party
+pet
+character joins a party
+party participates in mission
