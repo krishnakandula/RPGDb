@@ -2,16 +2,18 @@ character
 market
 mission
 barracks
-magician
-warrior
-general store
-armory
-inventory
+party
 armor
 weapons
 tools
 food
 potion
+
+magician
+warrior
+general store
+armory
+inventory
 armory_{armor, tools, weapons}
 store_{food, potion}
 cafeteria
@@ -21,7 +23,6 @@ character_{armor, tools, weapons, food, potion, skill}
 colosseum
 quest
 rewards
-party
 pet
 character joins a party
 party participates in mission

@@ -12,10 +12,15 @@ let insertFoodStatement = `INSERT INTO ${TABLE_NAME} (${COLS.FOOD_ID}) VALUES ($
 let food = {
 	name: `${TABLE_NAME} insert`,
 	text: insertFoodStatement,
-	values: [generator.generatorId()]
+	values: []
 };
 
+let generate = () => {
+    preparedStatement.values = generator.generateId();
+    return preparedStatement;
+}
 
 module.exports = {
-  food
+    TABLE_NAME,
+    generate
 };

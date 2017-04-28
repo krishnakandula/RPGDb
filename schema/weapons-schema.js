@@ -9,12 +9,18 @@ const COLS = {
 
 let insertWeaponsStatement = `INSERT INTO ${TABLE_NAME} (${COLS.WEAPONS_ID}) VALUES ($1)`;
 
-let weapons = {
+let preparedStatement = {
     name: `${TABLE_NAME} insert`,
     text: insertWeaponsStatement,
-    value: [generator.generateId()]
+    values: []
 };
 
+let generate = () => {
+    preparedStatement.values = generator.generateId();
+    return preparedStatement;
+}
+
 module.exports = {
-    weapons
+    TABLE_NAME,
+    generate
 };

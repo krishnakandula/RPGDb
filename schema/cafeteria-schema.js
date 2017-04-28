@@ -1,5 +1,6 @@
 // Contains schema for cafeteria
 const BARRACKS = require("./barracks-schema.js");
+const generator = require("./../generator");
 
 const TABLE_NAME = "cafeteria";
 
@@ -9,7 +10,28 @@ const COLS = {
     HEAD_CHEF: "head_chef"
 };
 
+let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.BARRACKS_ID} ${COLS.CAFETERIA_ID} ${COLS.HEAD_CHEF}) VALUES ($1, $2, $3)`;
+
+let generateValues = () => {
+    let barracksID;
+    let cafeteriaID = generator.generateId();
+    let headChef = generator.generateRandomName();
+
+    return [barracksID, cafeteriaID, headChef];
+}
+
+let preparedStatement = {
+    name: `${TABLE_NAME} insert`,
+    text: insertStatement,
+    values: []
+}
+
+let generate = () => {
+    preparedStatement.values = generateValues();
+    return preparedStatement;
+}
+
 module.exports = {
     TABLE_NAME,
-    COLS
+    generate
 };
