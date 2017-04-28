@@ -1,5 +1,6 @@
 //Contains the schema for the warrior relation
 const CHARACTER = require('./character-schema');
+const MAX_STAMINA = require("./../data/constants").character.MAX_STAMINA;
 const generator = require('./../generator');
 
 const TABLE_NAME = 'warrior';
@@ -14,10 +15,15 @@ const COLS = {
 let insertWarriorStatment = `INSERT INTO ${TABLE_NAME} (${COLS.CHARACTER_ID}, ${COLS.STAMINA_POINTS}, ${COLS.TYPE_FLAG_1}, ${COLS.TYPE_FLAG_2}) VALUES ($1, $2, $3, $4)`;
 
 let generateStatement = () => {
-    let character_id;
+    let index = generator.getCharacterIndex();
+
+    if (index > 0) 
+        return;
+
+    let character_id = CHARACTER.tuples[index].values[0];
     let stamina_points = generateRandomNumber(10, MAX_STAMINA);
-    let type_flag_1;
-    let type_flag_2;
+    let type_flag_1 = generator.generateRandomSex();
+    let type_flag_2 = generator.generateRandomSex();
 
     return [character_id, stamina_points, type_flag_1, type_flag_1];
 }

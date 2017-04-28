@@ -1,6 +1,8 @@
 const names = require('./data/names');
 const uuid = require('uuid/v1');
 
+let characterCount = 100;
+
 /**
  *
  * @returns {*}
@@ -70,6 +72,10 @@ let pickRandomEntryFromArray = (sourceArray) => {
     return sourceArray[index];
 }
 
+let getCharacterIndex = () => {
+    return characterCount--;
+}
+
 
 module.exports = {
     generateRandomName,
@@ -77,5 +83,6 @@ module.exports = {
     generateRandomSex,
     generateRandomPartyName,
     generateId,
-    pickRandomEntryFromArray
+    pickRandomEntryFromArray,
+    getCharacterIndex
 };
