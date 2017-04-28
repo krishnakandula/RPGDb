@@ -69,7 +69,7 @@ let generateId = () => {
 let pickRandomEntryFromArray = (sourceArray) => {
     let index = generateRandomNumber(0, sourceArray.length);
 
-    return targetArray[index];
+    return sourceArray[index];
 }
 
 let getCharacterIndex = () => {

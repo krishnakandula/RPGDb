@@ -9,7 +9,7 @@ node_modules
 .idea/
 
 #Output
-out.txt
+*.txt
 
 #Mac
 .DS_Store

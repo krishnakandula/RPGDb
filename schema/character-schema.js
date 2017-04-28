@@ -17,7 +17,7 @@ const COLS = {
 };
 
 let insertCharacterStatement =
-    `INSERT INTO ${TABLE_NAME} (${COLS.ID}, ${COLS.NAME}, ${COLS.SEX}, ${COLS.EXP}, ${COLS.HP} ${COLS.MARKET_ID}) VALUES ($1, $2, $3, $4, $5, $6)`;
+    `INSERT INTO ${TABLE_NAME} (${COLS.ID}, ${COLS.NAME}, ${COLS.SEX}, ${COLS.EXP}, ${COLS.HP}, ${COLS.MARKET_ID}) VALUES ($1, $2, $3, $4, $5, $6)`;
 
 let generateStatement = () => {
     let id = generator.generateId();
@@ -25,10 +25,21 @@ let generateStatement = () => {
     let sex = generator.generateRandomSex();
     let exp = generator.generateRandomNumber(character.MIN_EXP, character.MAX_EXP);
     let hp = generator.generateRandomNumber(character.MIN_HP, character.MAX_HP);
-    let marketIndex = generator.generateRandomNumber(0, market.tuples.length);
-    let market_id = market.tuples[marketIndex].values[0];
 
-    return [id, name, sex, exp, hp, market_id];
+    let inStoreRand = generator.generateRandomNumber(0, 3);
+    let marketId;
+    if(inStoreRand > 2){
+        //Character not in any store
+        marketId = null;
+    } else if (inStoreRand > 1){
+        //Character inside general store
+        marketId = market.tuples[0].values.ID;
+    } else{
+        //Character inside armory
+        marketId = market.tuples[1].values.ID;
+    }
+
+    return [id, name, sex, exp, hp, marketId];
 }
 
 let preparedStatement = {

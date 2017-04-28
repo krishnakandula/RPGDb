@@ -1,7 +1,12 @@
-const {client} = require('./db');
 const fs = require('fs');
+
+const {client} = require('./db');
+
 const characterSchema = require('./schema/character-schema');
+const marketSchema = require('./schema/market-schema');
 const partySchema = require('./schema/party-schema');
+const generalStoreSchema = require('./schema/general-store-schema');
+const armorySchema = require('./schema/armory-schema');
 
 let getFileName = (tableName) => {
     return `${tableName}Out.txt`;
@@ -14,24 +19,47 @@ client.connect(err => {
     //Execute queries here
     console.log("Connection successful");
 
+    //Populate 2 markets
+    let numberOfMarkets = 2;
+    writeToDb(marketSchema.TABLE_NAME,
+        marketSchema,
+        numberOfMarkets);
+
+    //Populate 1 General Store
+    let numberOfGeneralStores = 1;
+    writeToDb(generalStoreSchema.TABLE_NAME,
+        generalStoreSchema,
+        numberOfGeneralStores);
+
+    //Populate 1 Armory
+    let numberOfArmories = 1;
+    writeToDb(armorySchema.TABLE_NAME,
+        armorySchema,
+        numberOfArmories)
+
     //Populate Characters
     let numberOfCharacters = 10;
-    while(numberOfCharacters >= 0){
-        let queryStatement = characterSchema.generate();
-        let fileName = getFileName(characterSchema.TABLE_NAME);
-        fs.appendFileSync(fileName, JSON.stringify(queryStatement) + '\n');
+    writeToDb(characterSchema.TABLE_NAME,
+        characterSchema,
+        numberOfCharacters);
+});
+
+function writeToDb(tableName, schema, iterations) {
+    let fileName = getFileName(tableName);
+    while(iterations > 0){
+        let queryStatement = schema.generate();
+        fs.appendFileSync(fileName, JSON.stringify(queryStatement)+ '\n');
         client
             .query(queryStatement)
             .then(result => {
-                console.log(`${characterSchema.TABLE_NAME} successfully populated`);
-
+                console.log(`${tableName} successfully populated`);
             })
             .catch(err => {
-                onError(characterSchema.TABLE_NAME, err);
+                onError(tableName, err);
             });
-        numberOfCharacters--;
+        iterations--;
     }
-});
+}
 
 /**
  *
