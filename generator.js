@@ -56,6 +56,16 @@ let generateId = () => {
     return uuid();
 }
 
+/**
+ * Picks a random entry from a source array
+ * @param {*} sourceArray 
+ */
+let pickRandomEntryFromArray = (sourceArray) => {
+    let index = generateRandomNumber(0, sourceArray.length);
+
+    return targetArray[index];
+}
+
 
 module.exports = {
     generateRandomName,
