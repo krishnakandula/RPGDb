@@ -4,6 +4,8 @@ const ARMOR = require("./armor-schema");
 
 const TABLE_NAME = "character_armor";
 
+// let insertCharacterArmorStatement = `INSERT INTO ${}`
+
 const COLS = {
     ARMOR_ID: ARMOR.COLS.ARMOR_ID,
     CHARACTER_ID: INVENTORY.COLS.CHARACTER_ID,

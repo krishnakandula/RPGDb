@@ -1,5 +1,4 @@
 const names = require('./data/names');
-const character = require('./schema/character-schema');
 const uuid = require('uuid/v1');
 
 /**
@@ -52,6 +51,11 @@ let generateRandomPartyName = () => {
     return names.party[index];
 }
 
+/**
+ * Convenience function so uuid does not need to be required
+ * Generates a UUID
+ * @returns {*}
+ */
 let generateId = () => {
     return uuid();
 }
