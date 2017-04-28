@@ -6,17 +6,17 @@ const MARKET = require("./market-schema");
 const TABLE_NAME = "characters";
 
 const COLS = {
-    MARKET_ID: MARKET.COL.MARKET_ID,
+    MARKET_ID: MARKET.COLS.MARKET_ID,
     BLACKSMITH: "blacksmith",
 }
 
 let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MARKET_ID} ${COLS.BLACKSMITH}) VALUES ($1, $2)`
 
 let generateValues = () => {
-    let marketID;
+    let marketId = MARKET.tuples[1]; //Get armory id from market
     let blacksmith = generator.generateRandomName();
-    
-    return [marketID, blacksmith];
+
+    return [marketId, blacksmith];
 }
 
 let preparedStatement = {
@@ -31,6 +31,7 @@ let generate = () => {
 }
   
 module.exports = {
+    COLS,
     TABLE_NAME,
     generate
 };
