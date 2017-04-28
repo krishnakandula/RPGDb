@@ -24,10 +24,9 @@ let generateValues= () => {
 let characterArmor = {
     name: `${TABLE_NAME} insert`,
     text: insertStatement,
-    values: generateStatement;
+    values: generateValues()
 }
 
 module.exports = {
-    TABLE_NAME,
-    COLS
+    characterArmor
 };

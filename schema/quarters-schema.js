@@ -20,12 +20,12 @@ let generateValues = () => {
     return [barracksID, quartersID, master];
 }
 
-let cafeteria = {
+let quarters = {
     name: `${TABLE_NAME} insert`,
     text: insertStatement,
     values: generateValues()
 }
 
 module.exports = {
-    cafeteria
+    quarters
 };

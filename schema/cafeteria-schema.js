@@ -27,6 +27,5 @@ let cafeteria = {
 }
 
 module.exports = {
-    TABLE_NAME,
-    COLS
+    cafeteria
 };
