@@ -12,7 +12,7 @@ const COLS = {
 let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.BARRACKS_ID} ${COLS.HEAD_CHEF}) VALUES ($1, $2)`;
 
 let generateValues = () => {
-    let barracksID;
+    let barracksID = BARRACKS.tuples[0].values[0];
     let headChef = generator.generateRandomName();
 
     return [barracksID, headChef];

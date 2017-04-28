@@ -33,8 +33,12 @@ let generate = () => {
     return preparedStatement;
 }
 
+//General store = 0, Armory = 1
+
 module.exports = {
+    COLS,
     TABLE_NAME,
+    COLS,
     tuples,
     generate
 };
