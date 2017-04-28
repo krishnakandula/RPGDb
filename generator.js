@@ -2,7 +2,7 @@ const names = require('./data/names');
 const uuid = require('uuid/v1');
 
 let characterCount = 100;
-
+let missionCount = 30;
 /**
  *
  * @returns {*}
@@ -76,6 +76,10 @@ let getCharacterIndex = () => {
     return characterCount--;
 }
 
+let getMissioncIndex = () => {
+    return missionCount--;
+}
+
 
 module.exports = {
     generateRandomName,
@@ -84,5 +88,6 @@ module.exports = {
     generateRandomPartyName,
     generateId,
     pickRandomEntryFromArray,
-    getCharacterIndex
+    getCharacterIndex,
+    getMissioncIndex
 };

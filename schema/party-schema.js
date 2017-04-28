@@ -32,8 +32,6 @@ let preparedStatement = {
     values: generateStatement()
 };
 
-console.log(preparedStatement.values);
-
 module.exports = {
     preparedStatement
 };
