@@ -4,6 +4,8 @@ const {character} = require('./../data/constants');
 //Contains the schema for the character relation
 const TABLE_NAME = "character";
 
+let tuples = [];
+
 const COLS = {
     ID: "character_id",
     NAME: "character_name",
@@ -33,10 +35,12 @@ let preparedStatement = {
 
 let generate = () => {
     preparedStatement.values = generateStatement();
+    tuples.push(preparedStatement);
     return preparedStatement;
 }
 
 module.exports = {
     TABLE_NAME,
+    tuples,
     generate
 };
