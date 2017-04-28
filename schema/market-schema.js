@@ -35,6 +35,7 @@ let generate = () => {
 
 module.exports = {
     TABLE_NAME,
+    COLS,
     tuples,
     generate
 };
