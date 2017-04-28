@@ -10,8 +10,7 @@ const COLS = {
 
 let insertBarracksStatement = `INSERT INTO ${TABLE_NAME} (${COLS.BARRACKS_ID} ${COLS.BARRACKS_NAME}) VALUES ($1, $2)`;                          
 
-const id = generator.generateId();
-let generateStatement = () => {
+let generateValues = () => {
     let id = generator.generateId();
     let name;
 
@@ -21,7 +20,7 @@ let generateStatement = () => {
 let barracks = {
         name: `${TABLE_NAME} insert`,
         text: insertBarracksStatement,
-        values : generateStatement()
+        values : generateValues()
     };
 
 module.exports = {

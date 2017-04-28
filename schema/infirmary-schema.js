@@ -12,7 +12,7 @@ const COLS = {
 
 let insertStatement = `INSERT INTO ${TABLE_NAME} ( ${COLS.HEAD_NURSE} ${COLS.BARRACKS_ID} ${COLS.INFIRMARY_ID}) VALUES ($1, $2, $3)`;
 
-let generateStatement = () => {
+let generateValues = () => {
     let barracksID;
     let ID = generator.generateId();
     let nurse = generator.generateRandomName();
@@ -23,7 +23,7 @@ let generateStatement = () => {
 let infirmary = {
     name: `${TABLE_NAME} insert`,
     text: insertStatement,
-    values: generateStatement()
+    values: generateValues()
 }
 
 module.exports = {

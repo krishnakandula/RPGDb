@@ -13,7 +13,7 @@ const COLS = {
 
 let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.WEAPONS_ID} ${COLS.ARMORY_ID} ${COLS.MARKET_ID}) VALUES ($1, $2, $3)`;
 
-let generateStatement = () => {
+let generateValues = () => {
     let weaponsID;
     let armoryID;
     let marketID;
@@ -24,7 +24,7 @@ let generateStatement = () => {
 let armory_weapon = {
     name: `${TABLE_NAME} insert`,
     text: insertStatement,
-    values: generateStatement()
+    values: generateValues()
 };
 
 
