@@ -3,6 +3,7 @@
     "MAX_EXP": 100,
     "MIN_EXP": 0,
     "MAX_HP": 1000,
-    "MIN_HP": 10
+    "MIN_HP": 10,
+    "MAX_STAMINA": 100
   }
 }
