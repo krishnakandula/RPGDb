@@ -8,4 +8,8 @@ node_modules
 #Idea
 .idea/
 
+#Output
 out.txt
+
+#Mac
+.DS_Store

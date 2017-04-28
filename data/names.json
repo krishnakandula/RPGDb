@@ -8,14 +8,38 @@
     "Karen",
     "Winston",
     "Devin",
-    "Sabrina",
-    "Becker",
-    "Balag",
-    "Nhut",
-    "Barney"
+    "Link",
+    "Mario",
+    "Luigi",
+    "Wario",
+    "Eric Becker",
+    "Susan",
+    "Debra",
+    "John",
+    "Matt",
+    "Balagi",
+    "Ash",
+    "Brock",
+    "Misty",
+    "Linda",
+    "Ness",
+    "Paula",
+    "Steve",
+    "Dog",
+    "Cat",
+    "Quote",
+    "Curly",
+    "Github"
   ],
   "party": [
     "party1",
-    "party2"
+    "party2",
+    "party3",
+    "party4"
+  ],
+  "barracks": [
+    "Warwick",
+    "Gibraltar",
+    "Nightingale"
   ]
 }
