@@ -23,9 +23,15 @@ let generateValues = () => {
 let quarters = {
     name: `${TABLE_NAME} insert`,
     text: insertStatement,
-    values: generateValues()
+    values: []
+}
+
+let generate = () => {
+    preparedStatement.values = generateValues();
+    return preparedStatement;
 }
 
 module.exports = {
-    quarters
+    TABLE_NAME,
+    generate
 };

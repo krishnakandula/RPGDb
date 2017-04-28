@@ -11,9 +11,15 @@ let insertFoodStatement = `INSERT INTO ${TABLE_NAME} (${COLS.POTION_ID}) VALUES 
 let potion = {
   name: `${TABLE_NAME} insert`,
   text: insertFoodStatement,
-  values: [generator.generateId()]
+  values: []
+}
+
+let generate = () => {
+    preparedStatement.values = generator.generateId();
+    return preparedStatement;
 }
 
 module.exports = {
-  potion
+    TABLE_NAME,
+    generate
 };

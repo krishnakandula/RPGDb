@@ -20,12 +20,18 @@ let generateValues = () => {
     return [barracksID, cafeteriaID, headChef];
 }
 
-let cafeteria = {
+let preparedStatement = {
     name: `${TABLE_NAME} insert`,
     text: insertStatement,
-    values: generateValues()
+    values: []
+}
+
+let generate = () => {
+    preparedStatement.values = generateValues();
+    return preparedStatement;
 }
 
 module.exports = {
-    cafeteria
+    TABLE_NAME,
+    generate
 };

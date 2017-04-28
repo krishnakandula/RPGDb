@@ -9,13 +9,19 @@ const COLS = {
 
 let insertArmorStatement = `INSERT INTO ${TABLE_NAME} (${COLS.ARMOR_ID}) VALUES ($1)`;
 
-let armor = {
+let preparedStatement = {
     name: `${TABLE_NAME} insert`,
     text: insertArmorStatement,
-    values: [generator.generateId()]
+    values: []
 };
+
+let generate = () => {
+   preparedStatement.values = generator.generateId();
+   return preparedStatement;
+}
 
 
 module.exports = {
-    armor
+    TABLE_NAME,
+    generate
 };

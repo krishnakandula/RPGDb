@@ -21,13 +21,19 @@ let generateValues = () => {
     return [toolsID, armoryID, marketID];
 }
 
-let armory_tool = {
+let preparedStatement = {
     name: `${TABLE_NAME} insert`,
     text: insertStatement,
-    values: generateValues()
+    values: []
 };
+
+let generate = () => {
+    preparedStatement.values = generateValues();
+    return preparedStatement;
+}
 
 
 module.exports = {
-    armory_tool
+   TABLE_NAME,
+   generate
 };

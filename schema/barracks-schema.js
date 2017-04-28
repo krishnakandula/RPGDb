@@ -17,13 +17,19 @@ let generateValues = () => {
     return [id, name];
 }
 
-let barracks = {
+let preparedStatement = {
         name: `${TABLE_NAME} insert`,
         text: insertBarracksStatement,
-        values : generateValues()
+        values : []
     };
 
+let generate = () => {
+    preparedStatement.values = generateValues();
+    return preparedStatement;
+}
+
 module.exports = {
-    barracks
+    TABLE_NAME,
+    generate
 };
 
