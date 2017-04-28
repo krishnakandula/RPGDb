@@ -11,14 +11,13 @@ const COLS = {
     MARKET_ID: ARMORY.COLS.MARKET_ID
 };
 
-let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.WEAPONS_ID} ${COLS.ARMORY_ID} ${COLS.MARKET_ID}) VALUES ($1, $2, $3)`;
+let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.WEAPONS_ID} ${COLS.MARKET_ID}) VALUES ($1, $2)`;
 
 let generateValues = () => {
     let weaponsID;
-    let armoryID;
     let marketID;
 
-    return [weaponsID, armoryID, marketID];
+    return [weaponsID, marketID];
 }
 
 let preparedStatement = {

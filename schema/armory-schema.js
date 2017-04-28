@@ -7,18 +7,16 @@ const TABLE_NAME = "characters";
 
 const COLS = {
     MARKET_ID: MARKET.COL.MARKET_ID,
-    ARMORY_ID: "armory_id",
     BLACKSMITH: "blacksmith",
 }
 
-let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MARKET_ID} ${COLS.ARMORY_ID} ${COLS.BLACKSMITH}) VALUES ($1, $2, $3)`
+let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MARKET_ID} ${COLS.BLACKSMITH}) VALUES ($1, $2)`
 
 let generateValues = () => {
     let marketID;
-    let armoryID = generator.generateId();
     let blacksmith = generator.generateRandomName();
     
-    return [marketID, armoryID, blacksmith];
+    return [marketID, blacksmith];
 }
 
 let preparedStatement = {

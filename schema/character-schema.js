@@ -11,11 +11,12 @@ const COLS = {
     NAME: "character_name",
     SEX: "sex",
     EXP: "experience_points",
-    HP: "hit_points"
+    HP: "hit_points",
+    MARKET_ID: "market_id"
 };
 
 let insertCharacterStatement =
-    `INSERT INTO ${TABLE_NAME} (${COLS.ID}, ${COLS.NAME}, ${COLS.SEX}, ${COLS.EXP}, ${COLS.HP}) VALUES ($1, $2, $3, $4, $5)`;
+    `INSERT INTO ${TABLE_NAME} (${COLS.ID}, ${COLS.NAME}, ${COLS.SEX}, ${COLS.EXP}, ${COLS.HP} ${COLS.MARKET_ID}) VALUES ($1, $2, $3, $4, $5, $6)`;
 
 let generateStatement = () => {
     let id = generator.generateId();
@@ -23,8 +24,9 @@ let generateStatement = () => {
     let sex = generator.generateRandomSex();
     let exp = generator.generateRandomNumber(character.MIN_EXP, character.MAX_EXP);
     let hp = generator.generateRandomNumber(character.MIN_HP, character.MAX_HP);
+    let market_id;
 
-    return [id, name, sex, exp, hp];
+    return [id, name, sex, exp, hp, market_id];
 }
 
 let preparedStatement = {
