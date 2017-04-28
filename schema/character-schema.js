@@ -1,5 +1,6 @@
 const generator = require('./../generator');
 const {character} = require('./../data/constants');
+const market = require('./market-schema');
 
 //Contains the schema for the character relation
 const TABLE_NAME = "character";
@@ -24,7 +25,8 @@ let generateStatement = () => {
     let sex = generator.generateRandomSex();
     let exp = generator.generateRandomNumber(character.MIN_EXP, character.MAX_EXP);
     let hp = generator.generateRandomNumber(character.MIN_HP, character.MAX_HP);
-    let market_id;
+    let marketIndex = generator.generateRandomNumber(0, market.tuples.length);
+    let market_id = market.tuples[marketIndex];
 
     return [id, name, sex, exp, hp, market_id];
 }
@@ -38,6 +40,7 @@ let preparedStatement = {
 let generate = () => {
     preparedStatement.values = generateStatement();
     tuples.push(preparedStatement);
+
     return preparedStatement;
 }
 
