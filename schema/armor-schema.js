@@ -12,7 +12,7 @@ let insertArmorStatement = `INSERT INTO ${TABLE_NAME} (${COLS.ARMOR_ID}) VALUES 
 let armor = {
     name: `${TABLE_NAME} insert`,
     text: insertArmorStatement,
-    values: [generator.generateId()]
+    value: [generator.generateId()]
 };
 
 

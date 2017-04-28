@@ -12,7 +12,7 @@ let insertWeaponsStatement = `INSERT INTO ${TABLE_NAME} (${COLS.WEAPONS_ID}) VAL
 let weapons = {
     name: `${TABLE_NAME} insert`,
     text: insertWeaponsStatement,
-    values: [generator.generateId()]
+    value: [generator.generateId()]
 };
 
 module.exports = {

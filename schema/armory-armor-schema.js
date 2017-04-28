@@ -11,17 +11,22 @@ const COLS = {
     MARKET_ID: ARMORY.COLS.MARKET_ID
 }
 
-let insertArmoryArmorStatement = `INSERT INTO ${TABLE_NAME} 
-                                    (${COLS.ARMOR_ID} ${COLS.ARMORY_ID} ${COLS.MARKET_ID})
-                                    VALUES ($1, $2, $3)`;
+let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.ARMOR_ID} ${COLS.ARMORY_ID} ${COLS.MARKET_ID}) VALUES ($1, $2, $3)`;
+
+let generateStatement = () => {
+    let armorID;
+    let armoryID;
+    let marketID;
+
+    return [armorID, armoryID, marketID];
+}
 
 let armory_armor = {
     name: `${TABLE_NAME} insert`,
-    text: insertArmoryArmorStatement,
-    value: 
-}
+    text: insertStatement,
+    value: generateStatement()
+};
 
 module.exports = {
-    TABLE_NAME,
-    COLS
+    armory_armor
 };
