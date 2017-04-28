@@ -8,12 +8,10 @@ const COLS = {
     PARTY_ID: "party_id"
 };
 
-let insertPartyStatement = `INSERT INTO ${TABLE_NAME}
-                                (${COLS.PARTY_NAME} ${COLS.PARTY_ID})
-                                VALUES ($1, $2)`
+let insertPartyStatement = `INSERT INTO ${TABLE_NAME} (${COLS.PARTY_NAME} ${COLS.PARTY_ID}) VALUES ($1, $2)`
 
 /**
- *        owl says hi
+ *
  * @returns {[*,*]}
  */
 let generateStatement = () => {
@@ -29,7 +27,7 @@ let generateStatement = () => {
  * @type {{name: string, text: string, values: (*)[]}}
  */
 let preparedStatement = {
-    name: `${TABLE_NAME} insert`,
+    name: `${TABLE_NAME} insert statement`,
     text: insertPartyStatement,
     values: generateStatement()
 };
@@ -37,6 +35,5 @@ let preparedStatement = {
 console.log(preparedStatement.values);
 
 module.exports = {
-    TABLE_NAME,
     preparedStatement
 };

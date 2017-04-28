@@ -24,7 +24,7 @@ let generateStatement = () => {
 let armory = {
     name: `${TABLE_NAME} insert`,
     text: insertStatement,
-    value: generateStatement()
+    values: generateStatement()
 };
   
 module.exports = {
