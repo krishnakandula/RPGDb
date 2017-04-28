@@ -2,7 +2,7 @@
 const generator = require('./../generator');
 const MARKET = require("./market-schema");
 
-const TABLE_NAME = "general-store";
+const TABLE_NAME = "general_store";
 
 const COLS = {
     MARKET_ID: MARKET.COLS.MARKET_ID,

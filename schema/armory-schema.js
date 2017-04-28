@@ -3,14 +3,14 @@ const generator = require("./../generator");
 
 const MARKET = require("./market-schema");
 
-const TABLE_NAME = "characters";
+const TABLE_NAME = "armory";
 
 const COLS = {
     MARKET_ID: MARKET.COLS.MARKET_ID,
     BLACKSMITH: "blacksmith",
 }
 
-let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MARKET_ID} ${COLS.BLACKSMITH}) VALUES ($1, $2)`
+let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MARKET_ID}, ${COLS.BLACKSMITH}) VALUES ($1, $2)`
 
 let generateValues = () => {
     let marketId = MARKET.tuples[1]; //Get armory id from market

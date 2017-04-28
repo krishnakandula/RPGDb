@@ -11,7 +11,7 @@ const COLS = {
     MARKET_NAME: "market_name",
 };
 
-let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MARKET_ID} ${COLS.MARKET_NAME}) VALUES ($1, $2)`;
+let insertStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MARKET_ID}, ${COLS.MARKET_NAME}) VALUES ($1, $2)`;
 
 let generateStatement = () => {
     let id = generator.generateId();
