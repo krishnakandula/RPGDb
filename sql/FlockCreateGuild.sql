@@ -73,13 +73,9 @@ CREATE TABLE INVENTORY (
 );
 CREATE TABLE MAGICIAN (
 	Character_id VARCHAR(64) NOT NULL
-	,Magician_id VARCHAR(64) NOT NULL
 	,FOREIGN KEY (Character_id) REFERENCES CHARACTER(Character_id)
-	,PRIMARY KEY (
-		Character_id
-		,Magician_id
-		)
-	,Magic_Points INT DEFAULT 100
+	,PRIMARY KEY (Character_id)
+	,Magic_Points INT DEFAULT 10
 	,Type_flag_1 BOOLEAN DEFAULT FALSE
 );
 CREATE TABLE MISSION (
@@ -139,12 +135,8 @@ CREATE TABLE POTION (
 CREATE TABLE WARRIOR (
 	Character_id VARCHAR(64) NOT NULL
 	,FOREIGN KEY (Character_id) REFERENCES CHARACTER(Character_id)
-	,Warrior_id VARCHAR(64) NOT NULL
-	,PRIMARY KEY (
-		Character_id
-		,Warrior_id
-		)
-	,Stamina_points INT DEFAULT 100
+	,PRIMARY KEY (Character_id)
+	,Stamina_points INT DEFAULT 10
 	,Type_flag_1 BOOLEAN DEFAULT FALSE
 	,Type_flag_2 BOOLEAN DEFAULT FALSE
 );
