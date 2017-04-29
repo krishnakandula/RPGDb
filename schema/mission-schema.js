@@ -13,9 +13,11 @@ let tuples = [];
 
 let insertMissionStatement = `INSERT INTO ${TABLE_NAME} (${COLS.MISSION_ID}, ${COLS.PARTY_ID}) VALUES ($1,$2)`;
 
-let generateValues = () => {
+let generateStatement = () => {
 	let mission_id = generator.generateId();
     let party_id = PARTY.tuples[generator.generateRandomNumber(0, NUM_PARTIES)].values[1];
+
+    return [mission_id, party_id];
 };
 
 let preparedStatement = {

@@ -4,7 +4,7 @@ const generator = require('./../generator');
 const partyNames = require('./../data/names').party;
 
 const TABLE_NAME = "party";
-
+let names = partyNames;
 let tuples = [];
 
 const COLS = {
@@ -12,19 +12,7 @@ const COLS = {
     PARTY_ID: "party_id"
 };
 
-let insertPartyStatement = `INSERT INTO ${TABLE_NAME} (${COLS.PARTY_NAME} ${COLS.PARTY_ID}) VALUES ($1, $2)`
-
-/**
- *
- * @returns {[*,*]}
- */
-let generateStatement = () => {
-    //Generate id
-    let id = generator.generateId();
-    //Generate name
-    let name = generator.generateRandomPartyName();
-    return [name, id];
-}
+let insertPartyStatement = `INSERT INTO ${TABLE_NAME} (${COLS.PARTY_NAME}, ${COLS.PARTY_ID}) VALUES ($1, $2)`
 
 /**
  *
@@ -36,15 +24,16 @@ let preparedStatement = {
     values: []
 };
 
-let generateValues = () => {
-    let name = generator.pickRandomEntryFromArray(partyNames);
+let generateStatement = () => {
+    let name = names[0];
+    names.splice(0, 1);
     let id = generator.generateId();
 
     return [name, id];
 }
 
 let generate = () => {
-    preparedStatement.value = generateValues();
+    preparedStatement.values = generateStatement();
     tuples.push(preparedStatement);
     return preparedStatement;
 }
