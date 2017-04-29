@@ -1,6 +1,7 @@
 // Contains schema for character_joins_a_party
 const CHARACTER = require("./character-schema");
 const PARTY = require("./party-schema");
+const generator = require('./../generator');
 
 const TABLE_NAME = "character_joins_a_party";
 
@@ -28,7 +29,6 @@ let generate = () => {
     preparedStatement.values = generateValues();
     return preparedStatement;
 }
-
 
 module.exports = {
     TABLE_NAME,

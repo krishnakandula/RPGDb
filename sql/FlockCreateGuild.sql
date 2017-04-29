@@ -83,6 +83,7 @@ CREATE TABLE MISSION (
 	,Party_id VARCHAR(200) NOT NULL
 	,FOREIGN KEY (Party_id) REFERENCES PARTY(Party_id)
 	,PRIMARY KEY (Mission_id)
+    ,Fight_date_and_time DATE NOT NULL DEFAULT NOW()
 );
 CREATE TABLE PARTY (
 	Party_name VARCHAR(30) NOT NULL

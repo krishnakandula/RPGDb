@@ -4,9 +4,11 @@ const {client} = require('./db');
 
 const characterSchema = require('./schema/character-schema');
 const marketSchema = require('./schema/market-schema');
-const partySchema = require('./schema/party-schema');
 const generalStoreSchema = require('./schema/general-store-schema');
 const armorySchema = require('./schema/armory-schema');
+const partySchema = require('./schema/party-schema');
+const missionSchema = require('./schema/mission-schema');
+const rewardsSchema = require('./schema/rewards-schema');
 
 let getFileName = (tableName) => {
     return `${tableName}Out.txt`;
@@ -38,10 +40,28 @@ client.connect(err => {
         numberOfArmories)
 
     //Populate Characters
-    let numberOfCharacters = 10;
+    let numberOfCharacters = 60;
     writeToDb(characterSchema.TABLE_NAME,
         characterSchema,
         numberOfCharacters);
+
+    //Populate 15 Parties
+    let numberOfParties = 15;
+    writeToDb(partySchema.TABLE_NAME,
+        partySchema,
+        numberOfParties);
+
+    //Populate missions
+    let numberOfMissions = 30;
+    writeToDb(missionSchema.TABLE_NAME,
+        missionSchema,
+        numberOfMissions);
+
+    //Populate rewards
+    let numberOfRewards = 30;
+    writeToDb(rewardsSchema.TABLE_NAME,
+        rewardsSchema,
+        numberOfRewards);
 });
 
 function writeToDb(tableName, schema, iterations) {

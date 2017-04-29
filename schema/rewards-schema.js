@@ -13,13 +13,16 @@ const COLS = {
 let tuples = [];
 
 let insertRewardsStatement = `INSERT INTO ${TABLE_NAME} (${COLS.REWARDS_ID}, ${COLS.GOLD},
-${COLS.EXP},${COLS.MISSION_ID},) VALUES ($1,$2,$3,$4)`;
+${COLS.EXP}, ${COLS.MISSION_ID}) VALUES ($1,$2,$3,$4)`;
 
-let generateValues = () => {
+let generateStatement = () => {
 	let rewards_id = generator.generateId();
-	let gold = generate.generateRandomNumbers(10,500);
-	let exp = generate.generateRandomNumbers(1,3);
-	let MISSION_ID = MISSION.tuples[generate.generateRandomNumbers(10,800)].values[0];
+	let gold = generator.generateRandomNumber(10,500);
+	let exp = generator.generateRandomNumber(1,3);
+	let index = generator.generateRandomNumber(0, MISSION.tuples.length);
+	let MISSION_ID = MISSION.tuples[index].values[0];
+
+	return [rewards_id, gold, exp, MISSION_ID];
 };
 
 let preparedStatement = {
@@ -38,5 +41,5 @@ module.exports = {
     TABLE_NAME,
     COLS,
     generate,
-    tuple
+    tuples
 };
