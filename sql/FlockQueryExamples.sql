@@ -11,9 +11,9 @@ SELECT *
     FROM CHARACTER, GENERAL_STORE
     WHERE CHARACTER.market_id = GENERAL_STORE.market_id;
 
-/* Value of of how much exp gained for a mission */
-SELECT (AVG(REWARDS.gold))
-        / ((SELECT COUNT(*) FROM CHARACTER) * ((SELECT COUNT(*) FROM PARTY) / 2)) "EXP GAINED FROM MISSION"
+/* Value of of how much exp gained for a specific mission */
+SELECT ceil((AVG(REWARDS.gold) * (1 + (SELECT fight_date FROM MISSION LIMIT 1 OFFSET 1)::Date - CURRENT_DATE))
+        / ((SELECT COUNT(*) FROM CHARACTER) * ((SELECT COUNT(*) FROM PARTY)))) "EXP GAINED FROM MISSION"
     FROM REWARDS;
 
 /* Show mission schedule for a party */
